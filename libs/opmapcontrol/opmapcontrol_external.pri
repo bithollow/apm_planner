@@ -61,7 +61,8 @@ HEADERS += libs/opmapcontrol/opmapcontrol.h \
            libs/opmapcontrol/src/internals/projections/platecarreeprojection.h \
            libs/opmapcontrol/src/internals/projections/platecarreeprojectionpergo.h \
            libs/opmapcontrol/src/mapwidget/waypointlineitem.h \
-    libs/opmapcontrol/src/mapwidget/omapconfiguration.h
+    libs/opmapcontrol/src/mapwidget/omapconfiguration.h \
+    $$PWD/src/internals/projections/baiduprojection.h
 FORMS += libs/opmapcontrol/src/mapwidget/mapripform.ui
 SOURCES += libs/opmapcontrol/src/core/alllayersoftype.cpp \
            libs/opmapcontrol/src/core/cache.cpp \
@@ -106,7 +107,8 @@ SOURCES += libs/opmapcontrol/src/core/alllayersoftype.cpp \
            libs/opmapcontrol/src/internals/projections/mercatorprojectionyandex.cpp \
            libs/opmapcontrol/src/internals/projections/platecarreeprojection.cpp \
            libs/opmapcontrol/src/internals/projections/platecarreeprojectionpergo.cpp \
-           libs/opmapcontrol/src/mapwidget/waypointlineitem.cpp
+           libs/opmapcontrol/src/mapwidget/waypointlineitem.cpp \
+    $$PWD/src/internals/projections/baiduprojection.cpp
 RESOURCES += libs/opmapcontrol/src/mapwidget/mapresources.qrc
 
 OTHER_FILES +=

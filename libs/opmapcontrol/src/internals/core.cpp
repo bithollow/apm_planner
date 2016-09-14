@@ -354,6 +354,15 @@ namespace internals {
                     }
                 }
                 break;
+            case MapType::BaiduMap:
+            {
+                if(Projection()->Type()!="BaiduMercatorProjection")
+                {
+                     SetProjection(new BaiduProjection());
+                     maxzoom=18;
+                }
+            }
+                break;
 
             default:
                 {

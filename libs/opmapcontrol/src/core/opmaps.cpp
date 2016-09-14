@@ -25,7 +25,7 @@
 * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 */
 #include "opmaps.h"
-
+#include "baiduprojection.h"
 
 namespace core {
     OPMaps* OPMaps::m_pInstance=0;
@@ -36,7 +36,7 @@ namespace core {
             m_pInstance=new OPMaps;
         return m_pInstance;
     }
-    OPMaps::OPMaps():RetryLoadTile(2),useMemoryCache(true)
+    OPMaps::OPMaps():RetryLoadTile(2),useMemoryCache(false)
     {
         accessmode=AccessMode::ServerAndCache;
         Language=LanguageType::English;
@@ -200,10 +200,15 @@ namespace core {
                     }
                     break;
                 case MapType::Statkart_Topo2:
-                                    {
-                                        qheader.setRawHeader("Referrer", "http://www.norgeskart.no/");
-                                    }
-                                    break;
+                    {
+                        qheader.setRawHeader("Referrer", "http://www.norgeskart.no/");
+                    }
+                    break;
+                case MapType::BaiduMap:
+                    {
+                        qheader.setRawHeader("Referrer", "http://map.baidu.com/");
+                    }
+                    break;
                 default:
                     break;
                 }

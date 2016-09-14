@@ -27,6 +27,7 @@
 #include "urlfactory.h"
 #include <QRegExp>
 #include <qmath.h>
+#include "baiduprojection.h"
 
 namespace core {
 
@@ -482,11 +483,20 @@ namespace core {
             }
             break;
         case MapType::Statkart_Topo2:
-                    {
+            {
 
-                        return QString("http://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo2&zoom=%1&x=%2&y=%3").arg(zoom).arg(pos.X()).arg(pos.Y());
-                    }
-                    break;
+                return QString("http://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo2&zoom=%1&x=%2&y=%3").arg(zoom).arg(pos.X()).arg(pos.Y());
+            }
+            break;
+        case MapType::BaiduMap:
+            {
+                //QString bd_sate_url = QString("http://shangetu3.map.bdimg.com/it/u=x=%1;y=%2;z=%3;v=009;type=sate&fm=46&udt=20150504&app=webearth2&v=009&udt=20150601").arg(pos.X()).arg(pos.Y()).arg(zoom);
+                QString bd_pl_url = QString("http://online3.map.bdimg.com/onlinelabel/?qt=tile&x=%1&y=%2&z=%3&styles=pl&udt=20160908&scaler=1&p=0").arg(pos.X()).arg(pos.Y()).arg(zoom);
+                qDebug()<< bd_pl_url;
+
+                return bd_pl_url;
+            }
+            break;
         default:
             break;
         }

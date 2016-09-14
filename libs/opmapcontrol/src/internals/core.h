@@ -47,6 +47,7 @@
 #include "../internals/projections/mercatorprojectionyandex.h"
 #include "../internals/projections/platecarreeprojection.h"
 #include "../internals/projections/platecarreeprojectionpergo.h"
+#include "../internals/projections/baiduprojection.h"
 #include "../core/geodecoderstatus.h"
 #include "../core/opmaps.h"
 #include "../core/diagnostics.h"

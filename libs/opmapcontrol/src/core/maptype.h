@@ -98,7 +98,9 @@ namespace core {
             GoogleHybridKorea=4005,
 
             YandexMapRu = 5000,
-            Statkart_Topo2 = 5500
+            Statkart_Topo2 = 5500,
+
+            BaiduMap=6000
         };
         static QString StrByType(Types const& value)
         {
